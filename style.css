@@ -1,0 +1,28 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Outfit:wght@100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+body {
+    font-family: "Outfit", sans-serif;
+    background-color: whitesmoke;
+    margin: 0;
+    padding: 0;
+}
+
+main {
+    max-width: 1000px;
+    margin: 0px auto;
+    padding: 20px 40px;
+}
+
+footer {
+    display: flex;
+    background-color: black;
+    color: white;
+    justify-content: center;
+    padding: 20px;
+}
+
+@media screen and (max-width: 768px) {
+    main {
+        max-width: 100%;
+    }
+}
