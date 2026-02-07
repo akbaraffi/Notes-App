@@ -5,22 +5,28 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Notes App</title>
-
 </head>
 
 <body>
     <header>
-        <app-bar title="My Notes"></app-bar>
+        <app-bar title="Notes App"></app-bar>
     </header>
-
     <main>
+        <div id="loading" class="loading">Loading</div>
+
         <note-input></note-input>
         <h2>My Notes</h2>
+        <div class="filter-container">
+            <button id="filter-button" class="filter-button">
+                Show Archived Notes
+            </button>
+        </div>
+
         <note-list></note-list>
     </main>
 
     <footer>
-        <span>©<span id="year"></span> Made by Akbar </span>
+        <span>&copy; <span id="year"></span> Made by Akbar</span>
     </footer>
 </body>
 
