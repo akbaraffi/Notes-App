@@ -82,7 +82,7 @@ function main() {
                 showResponseMessage(responseJson.message);
             } else {
                 Swal.fire({
-                    title: 'Note deleted',
+                    title: 'Note Deleted',
                     icon: 'success',
                     confirmButtonText: 'OK'
                 });

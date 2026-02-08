@@ -67,7 +67,7 @@ class NoteInput extends HTMLElement {
     form.reset();
 
     Swal.fire({
-      title: 'Note added',
+      title: 'Note Added',
       icon: 'success',
       confirmButtonText: 'OK'
     });
