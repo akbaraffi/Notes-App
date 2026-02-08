@@ -58,18 +58,20 @@ class NoteInput extends HTMLElement {
       archived: false,
     };
 
-    this.dispatchEvent(new CustomEvent('note-submit', {
-      detail: newNote,
-      bubbles: true,
-      composed: true,
-    }));
+    this.dispatchEvent(
+      new CustomEvent('note-submit', {
+        detail: newNote,
+        bubbles: true,
+        composed: true,
+      })
+    );
 
     form.reset();
 
     Swal.fire({
       title: 'Note Added',
       icon: 'success',
-      confirmButtonText: 'OK'
+      confirmButtonText: 'OK',
     });
   }
 

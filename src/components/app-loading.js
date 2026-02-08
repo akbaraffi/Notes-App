@@ -31,4 +31,4 @@ class AppLoading extends HTMLElement {
   }
 }
 
-customElements.define('app-loading', AppLoading); 
+customElements.define('app-loading', AppLoading);

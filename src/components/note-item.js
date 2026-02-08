@@ -15,13 +15,13 @@ class NoteItem extends HTMLElement {
       const date = createdAt.toLocaleDateString('en-US', {
         day: 'numeric',
         month: 'long',
-        year: 'numeric'
+        year: 'numeric',
       });
 
       const time = createdAt.toLocaleTimeString('en-US', {
         minute: '2-digit',
         hour: '2-digit',
-        hour12: true
+        hour12: true,
       });
 
       this.innerHTML = `
@@ -107,20 +107,24 @@ class NoteItem extends HTMLElement {
       `;
 
       this.querySelector('.button-delete').addEventListener('click', () => {
-        this.dispatchEvent(new CustomEvent('delete-note', {
-          detail: this.noteData.id,
-          bubbles: true
-        }));
+        this.dispatchEvent(
+          new CustomEvent('delete-note', {
+            detail: this.noteData.id,
+            bubbles: true,
+          })
+        );
       });
 
       this.querySelector('.button-archive').addEventListener('click', () => {
-        this.dispatchEvent(new CustomEvent('toggle-archive', {
-          detail: {
-            id: this.noteData.id,
-            archived: this.noteData.archived
-          },
-          bubbles: true
-        }));
+        this.dispatchEvent(
+          new CustomEvent('toggle-archive', {
+            detail: {
+              id: this.noteData.id,
+              archived: this.noteData.archived,
+            },
+            bubbles: true,
+          })
+        );
       });
     }
   }

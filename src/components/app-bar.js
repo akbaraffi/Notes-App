@@ -53,23 +53,21 @@ class AppBar extends HTMLElement {
     const { chars } = splitText('h1', { words: false, chars: true });
 
     animate(chars, {
-
       y: [
         { to: '-2.75rem', ease: 'outExpo', duration: 600 },
-        { to: 0, ease: 'outBounce', duration: 800, delay: 100 }
+        { to: 0, ease: 'outBounce', duration: 800, delay: 100 },
       ],
 
       rotate: {
         from: '-1turn',
-        delay: 0
+        delay: 0,
       },
       delay: stagger(50),
       ease: 'inOutCirc',
       loopDelay: 30000,
-      loop: true
+      loop: true,
     });
   }
-
 }
 
-customElements.define('app-bar', AppBar); 
+customElements.define('app-bar', AppBar);

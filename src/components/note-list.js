@@ -55,7 +55,7 @@ class NoteList extends HTMLElement {
         opacity: [0, 1],
         duration: 800,
         easing: 'easeOutExpo',
-        delay: stagger(50)
+        delay: stagger(50),
       });
     }
   }
