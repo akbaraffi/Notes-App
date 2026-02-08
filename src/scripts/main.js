@@ -2,6 +2,7 @@ import '../components/app-bar.js';
 import '../components/note-input.js';
 import '../components/note-list.js';
 import '../components/note-item.js';
+import '../components/app-loading.js';
 import { showLoading, hideLoading } from './utils.js';
 import Swal from 'sweetalert2'
 
@@ -10,7 +11,7 @@ function main() {
 
     const noteListElement = document.querySelector('note-list');
     const noteInputElement = document.querySelector('note-input');
-    const loadingElement = document.querySelector('#loading');
+    const loadingElement = document.querySelector('app-loading');
     const filterButton = document.querySelector('#filter-button');
 
     let isShowingArchived = false;
@@ -80,6 +81,12 @@ function main() {
             if (responseJson.error) {
                 showResponseMessage(responseJson.message);
             } else {
+                Swal.fire({
+                    title: 'Note deleted',
+                    icon: 'success',
+                    confirmButtonText: 'OK'
+                });
+
                 getNotes();
             }
         } catch (error) {

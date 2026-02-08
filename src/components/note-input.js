@@ -1,3 +1,5 @@
+import Swal from 'sweetalert2';
+
 class NoteInput extends HTMLElement {
   connectedCallback() {
     this.render();
@@ -63,6 +65,12 @@ class NoteInput extends HTMLElement {
     }));
 
     form.reset();
+
+    Swal.fire({
+      title: 'Note added',
+      icon: 'success',
+      confirmButtonText: 'OK'
+    });
   }
 
   render() {
@@ -91,6 +99,7 @@ class NoteInput extends HTMLElement {
         }
 
         note-input input, note-input textarea {
+          font-family: "Outfit", sans-serif;
           padding: 12px;
           border: 1px solid lightgray;
           border-radius: 4px;

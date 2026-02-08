@@ -1,3 +1,5 @@
+import { animate, stagger, splitText } from 'animejs';
+
 class AppBar extends HTMLElement {
   static observedAttributes = ['title'];
 
@@ -7,6 +9,11 @@ class AppBar extends HTMLElement {
   }
 
   connectedCallback() {
+    this.render();
+  }
+
+  attributeChangedCallback(name, oldValue, newValue) {
+    this[`_${name}`] = newValue;
     this.render();
   }
 
@@ -28,6 +35,7 @@ class AppBar extends HTMLElement {
         app-bar h1 {
           margin: 0;
           font-size: 1.7em;
+          letter-spacing: 0.1em;
         }
 
         @media screen and (max-width: 550px) {
@@ -41,12 +49,27 @@ class AppBar extends HTMLElement {
         <h1>${this._title}</h1>
       </div>
     `;
+
+    const { chars } = splitText('h1', { words: false, chars: true });
+
+    animate(chars, {
+
+      y: [
+        { to: '-2.75rem', ease: 'outExpo', duration: 600 },
+        { to: 0, ease: 'outBounce', duration: 800, delay: 100 }
+      ],
+
+      rotate: {
+        from: '-1turn',
+        delay: 0
+      },
+      delay: stagger(50),
+      ease: 'inOutCirc',
+      loopDelay: 30000,
+      loop: true
+    });
   }
 
-  attributeChangedCallback(name, oldValue, newValue) {
-    this[`_${name}`] = newValue;
-    this.render();
-  }
 }
 
-customElements.define('app-bar', AppBar);
+customElements.define('app-bar', AppBar); 

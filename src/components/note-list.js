@@ -1,4 +1,5 @@
 import './note-item.js';
+import { animate, stagger } from 'animejs';
 
 class NoteList extends HTMLElement {
   constructor() {
@@ -47,6 +48,14 @@ class NoteList extends HTMLElement {
         const noteItemElement = document.createElement('note-item');
         noteItemElement.note = note;
         listContainer.appendChild(noteItemElement);
+      });
+
+      animate(listContainer.children, {
+        translateY: [50, 0],
+        opacity: [0, 1],
+        duration: 800,
+        easing: 'easeOutExpo',
+        delay: stagger(50)
       });
     }
   }
