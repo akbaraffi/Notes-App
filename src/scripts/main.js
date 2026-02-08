@@ -59,7 +59,7 @@ function main() {
           isShowingArchived = false;
           updateFilterButtonText();
         }
-        getNotes();
+        await getNotes();
       }
     } catch (error) {
       showResponseMessage(error);
@@ -87,7 +87,7 @@ function main() {
           confirmButtonText: 'OK',
         });
 
-        getNotes();
+        await getNotes();
       }
     } catch (error) {
       showResponseMessage(error);
@@ -112,7 +112,7 @@ function main() {
       if (responseJson.error) {
         showResponseMessage(responseJson.message);
       } else {
-        getNotes();
+        await getNotes();
       }
     } catch (error) {
       showResponseMessage(error);
