@@ -55,6 +55,12 @@ function main() {
       if (responseJson.error) {
         showResponseMessage(responseJson.message);
       } else {
+        Swal.fire({
+          title: 'Note Added',
+          icon: 'success',
+          confirmButtonText: 'OK',
+        });
+
         if (isShowingArchived) {
           isShowingArchived = false;
           updateFilterButtonText();
@@ -86,7 +92,6 @@ function main() {
           icon: 'success',
           confirmButtonText: 'OK',
         });
-
         await getNotes();
       }
     } catch (error) {

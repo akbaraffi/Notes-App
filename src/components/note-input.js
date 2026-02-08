@@ -1,5 +1,3 @@
-import Swal from 'sweetalert2';
-
 class NoteInput extends HTMLElement {
   connectedCallback() {
     this.render();
@@ -67,12 +65,6 @@ class NoteInput extends HTMLElement {
     );
 
     form.reset();
-
-    Swal.fire({
-      title: 'Note Added',
-      icon: 'success',
-      confirmButtonText: 'OK',
-    });
   }
 
   render() {
