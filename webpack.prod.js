@@ -10,12 +10,12 @@ module.exports = merge(common, {
         use: [
           {
             loader: 'babel-loader',
-            exclude: /(node_modules|bower_components)/,
             options: {
               presets: ['@babel/preset-env'],
             },
           },
         ],
+        exclude: /(node_modules|bower_components)/,
       },
     ],
   },
