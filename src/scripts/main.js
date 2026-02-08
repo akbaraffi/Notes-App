@@ -127,10 +127,10 @@ function main() {
       : 'Archived Notes';
   };
 
-  const showResponseMessage = () => {
+  const showResponseMessage = (message = 'Check your internet connection') => {
     Swal.fire({
       title: 'Something went wrong',
-      text: 'Check your internet connection',
+      text: message,
       icon: 'error',
       confirmButtonText: 'OK',
     });
